@@ -24,8 +24,8 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 sh 'printenv'
-                sh "docker build -t aplicacion/app:${GIT_COMMIT} ."
-                sh "docker push aplicacion/app:${GIT_COMMIT}"
+                sh "docker build -t luiseduhg/app:${GIT_COMMIT} ."
+                sh "docker push luiseduhg/app:${GIT_COMMIT}"
             }
         }
     }
