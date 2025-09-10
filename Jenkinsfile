@@ -34,11 +34,7 @@ pipeline {
        stage('Kubernetes Deployment - dev') {
     steps {
         withKubeConfig([credentialsId: 'kubeconfig']) {
-            // Verificar conexión
-            sh "kubectl cluster-info"
-            sh "kubectl get nodes"
-            
-            // Aplicar deploymentsss
+                    // Aplicar deploymentsss
             sh "sed -i 's#replace#luiseduhg/app:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
             sh "kubectl apply -f k8s_deployment_service.yaml"
         }
