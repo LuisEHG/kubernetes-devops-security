@@ -36,9 +36,6 @@ pipeline {
         withKubeConfig([credentialsId: 'kubeconfig']) {
             // Aplicar deployments
             sh "sed -i 's#replace#luiseduhg/app:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
-             sh """
-                sudo chmod 644 /home/luis/.minikube/ca.crt
-                sudo chmod 644 /home/luis/.minikube/profiles/minikube/client.crt """
             sh "kubectl apply -f k8s_deployment_service.yaml"
         }
     }
