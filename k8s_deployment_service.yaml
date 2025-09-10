@@ -16,7 +16,7 @@ spec:
         app: devsecops
     spec:
       containers:
-      - image: replace
+      - image: luiseduhg/app:0ddcb0754f98b938313d772d3c117f7fafc2f828
         name: devsecops-container
 ---
 apiVersion: v1
