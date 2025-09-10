@@ -33,7 +33,7 @@ pipeline {
         
        stage('Kubernetes Deployment - dev') {
     steps {
-        withKubeConfig([credentialsId: 'minikube-kubeconfig']) {
+        withKubeConfig([credentialsId: 'kubeconfig']) {
             // Verificar conexión
             sh "kubectl cluster-info"
             sh "kubectl get nodes"
